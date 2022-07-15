@@ -20,3 +20,15 @@ spring:
     show-sql: true
     properties:
       hibernate.format_sql: true
+
+management:
+  endpoints:
+    health:
+      probes:
+        enabled: true
+      show-details: ALWAYS
+    web:
+      exposure:
+        include: loggers
+    loggers:
+      enabled: true
