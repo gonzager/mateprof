@@ -3,6 +3,8 @@ server:
   port: 8080
 
 spring:
+  main:
+    log-startup-info: false
   h2:
     console:
       enabled: true
@@ -23,12 +25,14 @@ spring:
 
 management:
   endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - loggers
     health:
       probes:
         enabled: true
       show-details: ALWAYS
-    web:
-      exposure:
-        include: loggers
     loggers:
       enabled: true
